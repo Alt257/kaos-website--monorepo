@@ -34,18 +34,8 @@
     }
   },
   "plugins": [
-    {
-      "plugin": "@nx/playwright/plugin",
-      "options": {
-        "targetName": "e2e"
-      }
-    },
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    }
+    { "plugin": "@nx/playwright/plugin", "options": { "targetName": "e2e" } },
+    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } }
   ],
   "generators": {
     "@nx/angular:application": {
@@ -55,5 +45,6 @@
       "unitTestRunner": "vitest-angular"
     }
   },
-  "defaultProject": "kaos-website--monorepo"
+  "defaultProject": "kaos-website--monorepo",
+  "nxCloudId": "6a8c9f670941e08f4629fc6a"
 }
