@@ -9,10 +9,7 @@
       "!{projectRoot}/.eslintrc.json",
       "!{projectRoot}/eslint.config.mjs"
     ],
-    "sharedGlobals": [
-      "{workspaceRoot}/.github/workflows/ci.yml",
-      "{workspaceRoot}/.github/workflows/ci.yml"
-    ]
+    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
   "targetDefaults": {
     "@angular/build:application": {
@@ -58,6 +55,5 @@
       "unitTestRunner": "vitest-angular"
     }
   },
-  "defaultProject": "kaos-website--monorepo",
-  "nxCloudId": "6a8c9f670941e08f4629fc6a"
+  "defaultProject": "kaos-website--monorepo"
 }
