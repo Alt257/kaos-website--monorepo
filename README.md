@@ -97,7 +97,7 @@ Create these repository secrets in **Settings > Secrets and variables > Actions*
 In cPanel **Setup Node.js App**, set the application root to `O2SWITCH_APP_PATH`, choose the required Node.js version, and set the startup file to:
 
 ```text
-dist/kaos-website--monorepo/server/server.mjs
+app.cjs
 ```
 
 The workflow installs production dependencies in the application root and restarts Passenger by updating `tmp/restart.txt`.

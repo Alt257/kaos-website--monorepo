@@ -95,7 +95,7 @@ jobs:
             "${O2SWITCH_USER}@${O2SWITCH_HOST}:${O2SWITCH_APP_PATH}/dist/kaos-website--monorepo/"
           rsync -az \
             -e "ssh -p ${O2SWITCH_PORT}" \
-            package.json package-lock.json \
+            app.cjs package.json package-lock.json \
             "${O2SWITCH_USER}@${O2SWITCH_HOST}:${O2SWITCH_APP_PATH}/"
 
       - name: Install production dependencies and restart Passenger
