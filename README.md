@@ -79,6 +79,29 @@ npx nx g ci-workflow
 
 [Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
 
+## Deploy to O2switch
+
+Every push to `master` that passes CI is deployed to an O2switch Node.js application over SSH.
+
+Create these repository secrets in **Settings > Secrets and variables > Actions**:
+
+| Secret | Value |
+| --- | --- |
+| `O2SWITCH_HOST` | O2switch SSH hostname |
+| `O2SWITCH_PORT` | SSH port, usually `22` |
+| `O2SWITCH_USER` | cPanel account username |
+| `O2SWITCH_SSH_KEY` | Private key authorized for the cPanel account |
+| `O2SWITCH_KNOWN_HOSTS` | Output of `ssh-keyscan -p <port> <host>` |
+| `O2SWITCH_APP_PATH` | Absolute path to the Node.js application, for example `/home/account/apps/kaos` |
+
+In cPanel **Setup Node.js App**, set the application root to `O2SWITCH_APP_PATH`, choose the required Node.js version, and set the startup file to:
+
+```text
+dist/kaos-website--monorepo/server/server.mjs
+```
+
+The workflow installs production dependencies in the application root and restarts Passenger by updating `tmp/restart.txt`.
+
 ## Install Nx Console
 
 Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
