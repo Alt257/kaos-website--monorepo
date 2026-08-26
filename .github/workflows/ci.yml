@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
 
 permissions:
@@ -49,7 +49,7 @@ jobs:
   deploy:
     name: Deploy to O2switch
     needs: main
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     env:
       O2SWITCH_HOST: ${{ secrets.O2SWITCH_HOST }}

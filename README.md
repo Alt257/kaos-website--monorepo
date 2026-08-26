@@ -81,7 +81,7 @@ npx nx g ci-workflow
 
 ## Deploy to O2switch
 
-Every push to `master` that passes CI is deployed to an O2switch Node.js application over SSH.
+Every push to `main` that passes CI is deployed to an O2switch Node.js application over SSH.
 
 Create these repository secrets in **Settings > Secrets and variables > Actions**:
 
